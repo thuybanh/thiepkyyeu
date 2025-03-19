@@ -3,14 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Card</title>
+    <title>Thiệp Mời Kỷ Yếu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <div class="heart"></div>
-        <h1>Happy Valentine's Day!</h1>
-        <p>You're the reason I smile every day. 💖</p>
+    <div class="container">
+        <h1>Thiệp Mời Kỷ Yếu</h1>
+        <input type="text" id="nameInput" placeholder="Nhập tên của bạn">
+        <button onclick="generateInvitation()">Nhận Thiệp</button>
+        <div id="invitation" class="invitation hidden"></div>
     </div>
+
+    <script>
+        function generateInvitation() {
+            const name = document.getElementById("nameInput").value.trim();
+            const invitation = document.getElementById("invitation");
+
+            if (name) {
+                invitation.innerHTML = `
+                    <p>Thân gửi <span>${name}</span>,</p>
+                    <p>Thúy bảnh trân trọng kính mời bạn iu đến tham dự buổi lễ kỷ yếu 🌹🌹</p>
+                    <p>Thời gian: 8:00 AM - 11:00 AM, Thứ 22, ngày 07/04/2025</p>
+                    <p>Địa điểm: Lớp 12A1, Trường THPT Quế Võ 1</p>
+                `;
+                invitation.classList.remove("hidden");
+            }
+        }
+    </script>
 </body>
 </html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+</head>
+

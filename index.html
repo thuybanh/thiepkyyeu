@@ -1,30 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiệp Mời Kỷ Yếu</title>
+    <title>Thư Mời Kỷ Yếu</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Thiệp Mời Kỷ Yếu</h1>
-        <input type="text" id="nameInput" placeholder="Nhập tên của bạn">
-        <button onclick="generateInvitation()">Nhận Thiệp</button>
-        <div id="invitation" class="invitation hidden"></div>
+        <div class="card">
+            <h1 class="title">Thư Mời Kỷ Yếu</h1>
+            <input type="text" id="nameInput" placeholder="Nhập tên của bạn">
+            <button onclick="generateCard()">Nhận Thư</button>
+            <div id="invitation" class="invitation hidden"></div>
+        </div>
     </div>
 
     <script>
-        function generateInvitation() {
-            const name = document.getElementById("nameInput").value.trim();
+        function generateCard() {
+            const name = document.getElementById("nameInput").value;
             const invitation = document.getElementById("invitation");
-
-            if (name) {
+            if (name.trim()) {
                 invitation.innerHTML = `
-                    <p>Thân gửi <span>${name}</span>,</p>
-                    <p>Thúy bảnh trân trọng kính mời bạn iu đến tham dự buổi lễ kỷ yếu 🌹🌹</p>
-                    <p>Thời gian: 8:00 AM - 11:00 AM, Thứ 2, ngày 07/04/2025</p>
-                    <p>Địa điểm: Lớp 12A1, Trường THPT Quế Võ 1</p>
+                    <div class="animated-background">
+                        <h2>🌹Thư Mời Kỷ Yếu🌹 </h2>
+                        <p>Thân gửi <strong>${name}</strong>,</p>
+                        <p>Thanh xuân của chúng ta sắp khép lại với biết bao kỷ niệm đáng nhớ.<p>
+                        <p>Để lưu giữ những khoảnh khắc tươi đẹp ấy, Thúy bảnh trân trọng mời bạn iêu <strong>${name}</strong> đến tham dự buổi kỷ yếu.</p>
+                        <p>Thời gian: 8:00 AM - 11:00 AM, Thứ 2, ngày 7/4/2025</p>
+                        <p>Địa điểm: Lớp 12A1, Trường THPT Quế Võ 1</p>
+                        <p>Sự hiện diện của bạn sẽ làm cho buổi lễ thêm phần ý nghĩa và trọn vẹn.<p> 
+                        <p>Mong bạn sẽ đến và cùng nhau tạo nên những kỷ niệm cuối cùng của tuổi học trò! 💖</p>
+                        <p>Trân trọng, <p>
+                        <p>Thúy bảnh💋<p>
+                    </div>
                 `;
                 invitation.classList.remove("hidden");
             }
@@ -32,8 +42,4 @@
     </script>
 </body>
 </html>
-<head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
-</head>
-
 
